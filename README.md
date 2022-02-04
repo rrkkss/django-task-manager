@@ -8,13 +8,19 @@ Requirements:
 	virtualenv (pip)
 	
 In master folder:
-	windows	1) python3 env\scripts\activate
-		2) python3 manage.py runserver
-		3) connect to 127.0.0.1:8000
-		x) python3 env\scripts\deactivate
+	
+windows	1) python3 env\scripts\activate
+	2) python3 manage.py runserver
+	3) connect to 127.0.0.1:8000
+	x) python3 env\scripts\deactivate
 
-	linux	1) source env/bin/activate
-		2) python3 manage.py runserver
-		3) connect to 127.0.0.1:8000
-		x) deactivate
+linux	1) source env/bin/activate
+	2) python3 manage.py runserver
+	3) connect to 127.0.0.1:8000
+	x) deactivate
 
+user: admin
+pass: admin
+
+user: uzivatelX
+pass: django22
