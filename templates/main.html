@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    {% load static %}
+
+    <meta charset="UTF-8">
+    <meta name="description" content="Projekt úkolníček">
+    <meta name="keywords" content="django, úkolníček">
+    <meta name="author" content="MH">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Úkolníček</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"/>
+</head>
+
+<body>
+    
+    {% include 'navbar.html' %}
+
+    {% block content %}
+    {% endblock %}
+
+    {% include 'footer.html' %}
+
+</body>
+</html> 

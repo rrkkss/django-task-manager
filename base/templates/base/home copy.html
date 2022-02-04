@@ -1,0 +1,36 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<main>
+    <div class="container">
+        {% if request.user.is_authenticated %}
+            <a href="{% url 'user-profile' user.id %}" class="btn btn-primary btn-lg" id="btn-pristup">
+                <h3>přistoupit na úkolník</h3>
+            </a>
+        {% else %}
+            <h3>Vyberte uživatele:</h3>
+            <form method="POST" action="" class="login">
+                {% csrf_token %}
+
+                <div class="login-list">
+                    <div class="login-list-jmena">
+                        {% for user in users %}
+                            <input type="radio" name="username" value="{{user.username}}"/>
+                            <label for="username">{{user.username}}</label><br>                            
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <input type="password" name="password" placeholder="zadej heslo"/><br>
+                <input type="submit" name="submit" value="přihlásit se" class="btn btn-secondary btn-lg"/>
+            </form>
+            <hr>
+
+            <p>Nemáte účet?</p>
+            <a href="{% url 'register' %}" class="btn btn-primary btn-lg">REGISTROVAT</a>
+        {% endif %}
+    </div>
+</main>
+
+{% endblock %}

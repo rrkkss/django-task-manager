@@ -1,0 +1,10 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<div class="container">
+    <h1 class="pt-3 pb-1">Nelze postupovat, nejste {{user}}</h1>
+    <a href="{{request.META.HTTP_REFERER}}" class="btn btn-primary btn-lg">Zpět</a>
+</div>
+
+{% endblock %}

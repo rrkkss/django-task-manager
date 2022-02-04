@@ -1,0 +1,13 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<div class="container">
+    <form method="POST" action="">
+        {% csrf_token %}
+        <h3 class="pt-3">Opravdu chcete smazat úkol "{{obj}}" ?</h3>
+        <!-- v request header jsou data o refereru -->
+        <a href="{{request.META.HTTP_REFERER}}" class="btn btn-secondary btn-lg">Zpět</a>
+        <input type="submit" value="Smazat" class="btn btn-primary btn-lg"/>
+    </form>
+</div>
+{% endblock %}

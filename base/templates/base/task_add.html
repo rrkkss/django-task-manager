@@ -1,0 +1,30 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<div class="container">
+    <div class="form">
+        <form method="POST" action="">
+            {% csrf_token %}
+
+            <div class="form-group">
+                <label>Název úkolu</label>
+                {{form.name}}
+            </div>
+
+            <div class="form-group">
+                <label>Popis úkolu</label>
+                {{form.description}}
+            </div>
+
+            <div class="form-group">
+                <label>Je splněn?</label>
+                {{form.finished}}
+            </div>
+
+            <input type="submit" value="Přidej" class="btn btn-primary btn-lg"/>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

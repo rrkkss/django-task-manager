@@ -1,0 +1,28 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<div class="container">
+    <h4 class="mt-3 mb-3">celkem {{count}} úkolů</h4>
+    <a href="{% url 'add-task' user.id %}" class="btn btn-primary btn-lg mb-3">Přidat</a>
+
+    <div class="tasks d-flex flex-wrap">
+        {% for task in tasks %}
+            <div class="tasks-single pt-3 pb-3 mt-3 mb-3 text-center">
+                <div class="tasks-single-task">
+                    <ul>
+                        <li>úkol: {{task.name}}</li>
+                        <li>popis: {{task.description}}</li>
+                        <li>dokončený: {{task.finished}}</li>
+                    </ul>
+
+                    <a href="{% url 'update-task' task.id %}" class="btn btn-secondary btn-sm">Upravit</a>
+                    <a href="{% url 'remove-task' task.id %}" class="btn btn-danger btn-sm">Smazat</a>
+                </div>
+            </div>    
+        {% endfor %}
+    </div>
+</div>
+
+
+{% endblock %}
