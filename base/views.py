@@ -24,10 +24,13 @@ def loginUser(request):
         if user is not None:
             login(request, user)
         else:
-            messages.error(request, 'špatné heslo')
+            messages.error(request, 'špatné jméno nebo heslo')
 
     data = {}
-    return render(request, 'base/profile.html', data)
+    try:
+        return render(request, 'base/profile.html', data)
+    except:
+        return redirect('home')
 
 
 def logoutUser(request):

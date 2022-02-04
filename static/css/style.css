@@ -23,8 +23,11 @@ input {
     flex: 100%;
 }
 
-/* Small devices (landscape phones, 576px and up) */
-
+.error {
+    color: #A00;
+    font-size: 1.5rem;
+    padding-top: 1rem;
+}
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
